@@ -55,9 +55,10 @@ func _ready():
 	
 func game_loop():
 	for cur_op in opps:
-		if not middle_of_match:
-			full_match(cur_op)
-		yield(get_tree().create_timer(1), "timeout")
+		if middle_of_match:
+			yield(self, "finished_round")
+		full_match(cur_op)
+
 		
 
 func full_match(cur_op):
@@ -153,6 +154,7 @@ func play_round(cur_op):
 	
 	if caught:
 		result = DQ
+		say(cur_op, MID) # they call you out on your cheating
 	else: 
 		result = play_throw(cur_throw, op_choice)
 		
@@ -168,10 +170,9 @@ func play_round(cur_op):
 	
 	update_history(cur_throw, op_choice, result)
 
-	# now we animate the outcome
-	
 	# say mid words
 	middle_of_round = false
+	emit_signal("finished_round")
 
 	
 func update_history(p_move, op_move, result):
@@ -186,29 +187,30 @@ func flip_ui():
 	MoveSelect.toggle_on_screen()
 	
 	Talking.toggle_on_screen()
-	
-	
 
 func say(cur_op, context):
 	var waiting
 	
 	flip_ui()
-	
 	yield(Talking, "flipped")
-		
+
 	# now we want to talk
-	if context == INTRO:
-		Talking.speak(cur_op.intros)
-	elif context == MID:
-		Talking.speak(cur_op.mids)
-	elif context == WINNER:
-		Talking.speak(cur_op.wins)
-	else:
-		Talking.speak(cur_op.loses)
-	yield(Talking, "completed_typing")
+	match context:
+		INTRO: 
+			Talking.speak(cur_op.intros)
+			yield(Talking, "completed_typing")
+		MID:
+			Talking.speak(cur_op.mids)
+			yield(Talking, "completed_typing")
+		WINNER:
+			Talking.speak(cur_op.wins)
+			yield(Talking, "completed_typing")
+		LOSER:
+			Talking.speak(cur_op.loses)
+			yield(Talking, "completed_typing")
+		_:
+			print("You actual fucking moron. The code is broken. "+
+			"It's probably more my fault than yours but fuck you.")
 	
-	Talking.toggle_on_screen()
-	
-	PlayerHealth.toggle_on_screen()
-	OpHealth.toggle_on_screen()
-	MoveSelect.toggle_on_screen()
+	flip_ui()
+	yield(Talking, "flipped")
