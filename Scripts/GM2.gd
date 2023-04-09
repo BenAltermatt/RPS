@@ -30,12 +30,14 @@ var PlayerHealth
 var OpHealth
 var Talking
 var OpponentSprite
+var Signs
 var rng = RandomNumberGenerator.new()
 
 var round_history = []
 var cur_throw = -1
 var p_health = PLAYER_HEALTH
 var cur_op
+var throwing = false
 
 
 func _ready():
@@ -46,6 +48,7 @@ func _ready():
 	OpHealth = $OpHealth			# health object for opponent
 	MoveSelect = $MoveSelect		# move selection menu
 	OpponentSprite = $Opponent		# this is the opponent sprite
+	Signs = $Signs					# ROCK PAPER SCISSORS SHOOT SIGNS
 
 	# connect to the throw clicked singals in the children
 	var temp = get_node("MoveSelect/TextureRect/Control").get_children()
@@ -105,9 +108,11 @@ func play_round():
 	if cur_throw == CHEAT:
 		cur_throw = cheat_play(op_move)
 	
+	$EAttackInd.disp(op_move)
+	$PAttackInd.disp(cur_throw)
+
 	# calculate the results
 	var results = null
-	
 	if caught:
 		results = DQ
 	else:
@@ -117,7 +122,8 @@ func play_round():
 	render_moves(cur_throw, op_move, threw, results)
 	yield(self, "move_fin")
 
-	print("Progressed")
+	$EAttackInd.undisp()
+	$PAttackInd.undisp()
 
 	# handle caught cheating consequences
 	if caught:
@@ -138,17 +144,14 @@ func player_move():
 	cur_throw = -1
 	ready_set_go()
 
+
 # displays / runs the ready_set_go signs and catalogs a throw
 # returns when finished
 func ready_set_go():
-	print("ROCK")
-	yield(get_tree().create_timer(RPS_DELAY), "timeout")
-	print("PAPER")
-	yield(get_tree().create_timer(RPS_DELAY), "timeout")
-	print("SCISSORS")
-	yield(get_tree().create_timer(RPS_DELAY), "timeout")
-	print("SHOOT")
-	yield(get_tree().create_timer(GRACE_PD), "timeout")
+	throwing = true
+	Signs.count_down(RPS_DELAY, GRACE_PD)
+	yield(Signs, "displayed")
+	throwing = false
 	emit_signal("throw_fin")
 
 # this should render the moves taking place
@@ -212,6 +215,8 @@ func flip_ui():
 
 # handle signal from children to catch throws
 func _handle_throw(throw_num):
+	if throwing:
+		$PAttackInd.disp(throw_num)
 	cur_throw = throw_num
 
 # UTILITY METHODS

@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Sprites/rock-sign.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/RPSSigns.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/paper-sign.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/shoot-sign.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/scissors-sign.png" type="Texture" id=5]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Shoot" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Scissors" type="TextureRect" parent="."]
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.75
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Paper" type="TextureRect" parent="."]
+anchor_left = 0.2
+anchor_top = 0.25
+anchor_right = 0.8
+anchor_bottom = 0.75
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Rock" type="TextureRect" parent="."]
+anchor_left = 0.3
+anchor_top = 0.25
+anchor_right = 0.745
+anchor_bottom = 0.75
+texture = ExtResource( 1 )
+expand = true

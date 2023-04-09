@@ -8,12 +8,13 @@
     win : I can't help that I am loved by God
 ;
 (Eli Tenma, 2, 2, 3, 4, 4, kid-anframes, win-kid, lose-kid)
-    intro : kid
-    intro : kid
-    intro : kid
-    mid : Wow 
-    lose : Damn. Im gonna kill myself.
-    win : YEAAAAH. I FUCKIN KNEW IT.
+    intro : Hey la-... uhhh... nevermind.
+    intro : I'm sorry lady, I wanted to play rock paper scissors but you look kinda scary.
+    intro : Okay, we can still play. Just, please don't get mad when you lose.
+    mid : Lady my momma said I can't be friends with cheaters.
+    lose : NO! I wanted to win!!
+    win : HAHA YAA–... I'm sorry lady, I didn't mean it.
+    win : Please don't be mad!
 ;
 (Mom, 3, 2, 3, 4, 5, mom-anframes, win-mom, lose-mom)
     intro : Hey honey! Surprised to see me?
