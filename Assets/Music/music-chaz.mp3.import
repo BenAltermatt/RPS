@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/music-chaz.mp3-08006bea84f467a7c755df3ec0366f9b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/music-chaz.mp3"
+dest_files=[ "res://.import/music-chaz.mp3-08006bea84f467a7c755df3ec0366f9b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

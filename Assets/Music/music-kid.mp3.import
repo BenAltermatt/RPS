@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/music-kid.mp3-1cd54ab0464ebe5cac705ecefb6d6eaa.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/music-kid.mp3"
+dest_files=[ "res://.import/music-kid.mp3-1cd54ab0464ebe5cac705ecefb6d6eaa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
