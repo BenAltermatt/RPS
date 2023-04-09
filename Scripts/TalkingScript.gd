@@ -25,9 +25,14 @@ var Text
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.visible = false
+	
 	Text = $RichTextLabel
 	on_screen = false
 	flipping = false
+	
+	self.set_position(self.get_position() + Vector2(0, OS.window_size.y))
+	self.visible = true
 
 func speak(msgs):
 	complete = false

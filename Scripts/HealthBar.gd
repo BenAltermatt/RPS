@@ -11,9 +11,11 @@ var max_health = -1
 var gc
 var on_screen
 
+
 func _ready():
 	gc = get_node("GridContainer")
 	on_screen = true
+
 	
 func update_health(max_hp, cur_hp):
 	if max_health != max_hp:
