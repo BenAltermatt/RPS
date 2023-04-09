@@ -1,0 +1,7 @@
+(Chaz Lastname, 1, 2, 3, 4, 5, nonernlol)
+    intro : You look lost, m'lady! Let me help you!
+    intro : I'll show you how nice I am at rps!
+    intro : If I win go on a date with me!
+    mid : Wow 
+    lose : Damn. Im gonna kill myself.
+    win : YEAAAAH. I FUCKIN KNEW IT.

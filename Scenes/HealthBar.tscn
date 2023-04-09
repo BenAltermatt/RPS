@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/HealthBar.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Heart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sprites/heart-empty.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/heart-full.png" type="Texture" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+full = ExtResource( 4 )
+empty = ExtResource( 3 )
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 4
+
+[node name="Heart" parent="GridContainer" instance=ExtResource( 2 )]
+margin_right = 253.0
+margin_bottom = 298.0
+
+[node name="Heart2" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 257.0
+margin_right = 510.0
+margin_bottom = 298.0
+
+[node name="Heart3" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 514.0
+margin_right = 767.0
+margin_bottom = 298.0
+
+[node name="Heart4" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 771.0
+margin_right = 1024.0
+margin_bottom = 298.0
+
+[node name="Heart5" parent="GridContainer" instance=ExtResource( 2 )]
+margin_top = 302.0
+margin_right = 253.0
+margin_bottom = 600.0
+
+[node name="Heart6" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 257.0
+margin_top = 302.0
+margin_right = 510.0
+margin_bottom = 600.0
+
+[node name="Heart7" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 514.0
+margin_top = 302.0
+margin_right = 767.0
+margin_bottom = 600.0

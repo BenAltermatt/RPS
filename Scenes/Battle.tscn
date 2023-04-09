@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Selection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/HealthBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/GameManager.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Challenger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Sprites/mc_anframes.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/TextBox.tscn" type="PackedScene" id=6]
+
+[node name="Node" type="Node"]
+script = ExtResource( 3 )
+
+[node name="MoveSelect" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.7
+anchor_bottom = 0.95
+
+[node name="PlayerHealth" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.025
+anchor_top = 0.8
+anchor_right = 0.25
+anchor_bottom = 0.975
+
+[node name="OpHealth" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.75
+anchor_top = 0.8
+anchor_right = 0.975
+anchor_bottom = 0.975
+
+[node name="Opponent" parent="." instance=ExtResource( 4 )]
+position = Vector2( 595, 217 )
+scale = Vector2( 3, 3 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -137, 212 )
+scale = Vector2( 3, 3 )
+anim_frames = ExtResource( 5 )
+
+[node name="Talking" parent="." instance=ExtResource( 6 )]
+anchor_left = 0.15
+anchor_top = 1.8
+anchor_right = 0.85
+anchor_bottom = 1.95

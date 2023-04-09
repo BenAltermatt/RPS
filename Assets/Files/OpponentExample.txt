@@ -1,0 +1,6 @@
+(name, num, panic, focus, memory, max_health, anim_path)
+     intro : 
+     mid : 
+     win : 
+     lose : 
+;
