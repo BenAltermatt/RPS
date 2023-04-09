@@ -27,4 +27,6 @@ anchor_bottom = 0.85
 custom_fonts/font = SubResource( 1 )
 text = "Play Again"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

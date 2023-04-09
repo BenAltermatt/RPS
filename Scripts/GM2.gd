@@ -23,6 +23,8 @@ const LOSS_PENALTY = 1
 const RPS_DELAY = 1
 const GRACE_PD = .1
 const SPRITE_PATH = "res://Assets/Sprites/"
+const MUSIC_PATH = "res://Assets/Music/"
+const MUSIC_PATHS = ["music-chaz.mp3", "music-kid.mp3", "music-mom.mp3"]
 
 var Opponent = load("res://Scripts/Opponent.gd")
 var MoveSelect
@@ -59,6 +61,12 @@ func _ready():
 	
 
 func full_match():
+	
+	var music_player = get_node("AudioStreamPlayer")
+	music_player.stream = load(MUSIC_PATH + MUSIC_PATHS[cur_op.id - 1])
+	#add_child(music_player)
+	music_player.play()
+	
 	# set player and op health
 	PlayerHealth.update_health(PLAYER_HEALTH, p_health)
 	OpHealth.update_health(cur_op.health, cur_op.cur_health)
@@ -133,9 +141,17 @@ func play_round():
 		if threw: # on purpose
 			p_health -= CHEAT_PENALTY
 			cur_op.cur_health += LOSS_PENALTY
+			
 			PlayerHealth.update_health(PLAYER_HEALTH, p_health)
 			OpHealth.update_health(cur_op.health, cur_op.cur_health)
 
+	var music_player = get_node("SFX")
+	#music_player.stream = load("res://Assets/SFX/hurt.mp3")
+	#add_child(music_player)
+	if music_player.playing == false:
+		music_player.play()
+		
+		print("audio")
 	emit_signal("round_fin")
 	
 
