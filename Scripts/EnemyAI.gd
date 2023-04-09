@@ -20,9 +20,12 @@ func op_throw(op, history):
 		1:
 			return ROCK
 		2:
-			return rng.randi_range(ROCK, SCISSORS)
+			#return rng.randi_range(ROCK, PAPER)
+			return ROCK
 		3:
 			print(op.id)
+			if ( history.size() < 1 ):
+				rng.randi_range(ROCK, SCISSORS)
 			var last_array = history[history.size() - 1]
 			
 			var last_player_move = last_array[0]
