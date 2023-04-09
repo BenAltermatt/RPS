@@ -46,6 +46,7 @@ hover = ExtResource( 7 )
 pressed = ExtResource( 7 )
 normal = ExtResource( 4 )
 text = "[center]PAPER[/center]"
+throw_val = 1
 
 [node name="Control3" parent="TextureRect/Control" instance=ExtResource( 2 )]
 anchor_left = 0.531
@@ -56,6 +57,7 @@ hover = ExtResource( 10 )
 pressed = ExtResource( 10 )
 normal = ExtResource( 9 )
 text = "[center]SCISSORS[/center]"
+throw_val = 2
 
 [node name="Control4" parent="TextureRect/Control" instance=ExtResource( 2 )]
 anchor_left = 0.781
@@ -66,3 +68,4 @@ hover = ExtResource( 3 )
 pressed = ExtResource( 3 )
 normal = ExtResource( 8 )
 text = "[center]CHEAT[/center]"
+throw_val = 3

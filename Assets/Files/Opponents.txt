@@ -1,4 +1,4 @@
-(Chaz Lastname, 1, 2, 3, 4, 5, nonernlol, youwon, youlost)
+(Chaz Lastname, 1, 2, 100, 4, 5, nonernlol, youwon, youlost)
     intro : You look lost, m'lady! Let me help you!
     intro : I'll show you how nice I am at rps!
     intro : If I win go on a date with me!
@@ -6,6 +6,7 @@
     lose : Damn. Im gonna kill myself.
     win : YEAAAAH. I FUCKIN KNEW IT.
 ;
+
 (Chaz Lastname, 2, 2, 3, 4, 5, nonernlol, youwon, youlost)
     intro : Kill me
     mid : AHHHHH 
