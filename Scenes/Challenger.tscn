@@ -1,7 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Sprites/mc-anframes.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Challenger.gd" type="Script" id=2]
+
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/mc-anframes.png-800b195e2bd1c3102ce9cd07b75d0905.stex"
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -37,11 +39,11 @@ tracks/0/keys = {
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 speed_mult = 2.0
-anim_frames = ExtResource( 1 )
+anim_frames = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 100, 48 )
-texture = ExtResource( 1 )
+texture = SubResource( 3 )
 hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

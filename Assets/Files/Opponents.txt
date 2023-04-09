@@ -6,6 +6,7 @@
     mid : Cheating? Against me?? I don't think so! 
     lose : How could this be??!?
     win : I can't help that I am loved by God
+;
 (Eli Tenma, 2, 2, 3, 4, 4, kid-anframes, win-kid, lose-kid)
     intro : kid
     intro : kid
@@ -13,6 +14,7 @@
     mid : Wow 
     lose : Damn. Im gonna kill myself.
     win : YEAAAAH. I FUCKIN KNEW IT.
+;
 (Mom, 3, 2, 3, 4, 5, mom-anframes, win-mom, lose-mom)
     intro : Hey honey! Surprised to see me?
     intro : Your mom was quite the Rock Paper Scissors champion back in the day!

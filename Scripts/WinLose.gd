@@ -5,31 +5,35 @@ extends Control
 # var a = 2
 # var b = "text"
 var image_path = "res://Assets/Sprites/"
-var images = [["win-chaz.png","lose-chaz.png"],
-				["win-kid.png","lose-kid.png"],
-				["win-mom.png","lose-mom.png"]]
-
+var win 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var opponent_num = 3
-	var win = true
+	var opponent_num = GLSingleton.cur_op_ind
+	win = GLSingleton.won
 	var image = get_node("TextureRect")
+	var button = get_node("Button")
+	
 	if (win == true ):
-		var texture = load( image_path + images[opponent_num - 1][0] )
+		var texture = load( image_path + GLSingleton.ops[opponent_num].p_win_path + ".png")
 		print("player won")
 		if (texture != null ):
 			print("texture ok")
 			image.texture = texture
-		var button = get_node("Button")
 		button.text = "Next Round"
 	else:
-		var texture = load( image_path + images[opponent_num - 1][1] )
+		var texture = load( image_path + GLSingleton.ops[opponent_num].p_lose_path + ".png")
 		if (texture != null ):
+			print("Texture ok")
 			image.texture = texture
-	pass # Replace with function body.
+		button.text = "Retry"
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+
+func _on_Button_pressed():
+	if win:
+		GLSingleton.cur_op_ind += 1
+	GLSingleton.won = false
+	
+	get_tree().change_scene("res://Scenes/Battle.tscn")

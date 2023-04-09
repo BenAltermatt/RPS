@@ -24,6 +24,10 @@ config/name="Random Paper Scissors"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GLSingleton="*res://Scripts/GLSingleton.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

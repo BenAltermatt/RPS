@@ -26,3 +26,5 @@ anchor_right = 0.65
 anchor_bottom = 0.85
 custom_fonts/font = SubResource( 1 )
 text = "Play Again"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

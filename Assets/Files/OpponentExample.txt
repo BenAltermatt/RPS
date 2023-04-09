@@ -1,4 +1,4 @@
-(name, num, panic, focus, memory, max_health, anim_path)
+(name, num, panic, focus, memory, max_health, anim_path, win_path, lose_path)
      intro : 
      mid : 
      win : 

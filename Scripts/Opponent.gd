@@ -14,6 +14,8 @@ var mids = []
 var wins = []
 var loses = []
 var cur_health = -1
+var p_win_path = "None"
+var p_lose_path = "None"
 
 func _init(block=null):
 	var start = block.find("(")
@@ -28,6 +30,8 @@ func _init(block=null):
 	health = int(args[5].strip_edges())
 	cur_health = health
 	anim_path = args[6].strip_edges()
+	p_win_path = args[7].strip_edges()
+	p_lose_path = args[8].strip_edges()
 	
 	var lines = block.split("\n")
 	
