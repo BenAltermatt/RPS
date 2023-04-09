@@ -1,6 +1,8 @@
 extends Node2D
 
 export(float) var speed_mult
+export(float) var vscale
+export(float) var hscale
 export(Texture) var anim_frames
 export(int) var hframes = 3
 
@@ -13,8 +15,9 @@ func _ready():
 	sprite = $Sprite
 	
 	sprite.hframes = hframes
-	
 	sprite.texture = anim_frames
+	sprite.scale.x = hscale
+	sprite.scale.y = vscale
 	
 	animator.play("Idle")
 	animator.set_speed_scale(speed_mult)
