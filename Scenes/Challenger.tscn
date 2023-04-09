@@ -36,7 +36,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Control" type="Node2D"]
 script = ExtResource( 2 )
 speed_mult = 2.0
 anim_frames = SubResource( 3 )
