@@ -1,7 +1,22 @@
-(Chaz Lastname, 1, 2, 3, 4, 5, nonernlol)
-    intro : You look lost, m'lady! Let me help you!
-    intro : I'll show you how nice I am at rps!
-    intro : If I win go on a date with me!
+(Chaz Lastname, 1, 2, 3, 4, 3, chaz-anframes, win-chaz, lose-chaz)
+    intro : Why hello there child! I can't help but notice you admiring my gorgeous visage.
+    intro : No need to be embarrassed! I would too if I were you... But be warned!!
+    intro : I am the greatest Rock Paper Scissors champion to have every lived! Because... 
+    intro : Even the most beautiful of roses... have thorns! 
+    mid : Cheating? Against me?? I don't think so! 
+    lose : How could this be??!?
+    win : I can't help that I am loved by God
+(Eli Tenma, 2, 2, 3, 4, 4, kid-anframes, win-kid, lose-kid)
+    intro : kid
+    intro : kid
+    intro : kid
     mid : Wow 
     lose : Damn. Im gonna kill myself.
     win : YEAAAAH. I FUCKIN KNEW IT.
+(Mom, 3, 2, 3, 4, 5, mom-anframes, win-mom, lose-mom)
+    intro : Hey honey! Surprised to see me?
+    intro : Your mom was quite the Rock Paper Scissors champion back in the day!
+    intro : You'd be mad if I let you win, so I'll give you everything I got!
+    mid : Did you just try to cheat? I thought I raised you better than this! 
+    lose : You won! I'm so proud of you honey!
+    win : You've gotten so much better! Don't worry honey, you'll win next time
